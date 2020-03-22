@@ -1,4 +1,5 @@
-# Cryptocurrency is a single-page app for viewing the historical price data for cryptocurrency.
+# Cryptocurrency
+Cryptocurrency is a single-page app for viewing the historical price data for cryptocurrency.
 
 ## Built With
 - ReactJS
