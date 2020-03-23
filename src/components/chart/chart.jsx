@@ -19,18 +19,11 @@ class Chart extends React.Component{
     }
   }
 
-  componentDidUpdate() {
-    let { labels } = this.state.chartData;
-    let { data } = this.state.chartData.datasets[0];
-    let { dates } = this.props;
-    // this.setState({ lables: this.props.dates })
+  static defaultProps = {
+    displayTitle: true,
+    displayLegend: true,
+    legendPosition: 'bottom',
   }
-
-  // static defaultProps = {
-  //   displayTitle: true,
-  //   displayLegend: true,
-  //   legendPosition: 'bottom',
-  // }
 
   render () {
     let {
