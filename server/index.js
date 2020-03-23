@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// app.use(express.static('build'));
+app.use(express.static('build'));
 // app.use('/', routes);
 
 app.listen(PORT, () => {console.log(`The server is up and running on port: ${PORT}`)});

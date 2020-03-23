@@ -1,7 +1,6 @@
 import React from 'react';
-// import './App.scss';
-import Chart from './chart/chart'
-// import {Line} from 'react-chartjs'
+import './App.scss';
+import Chart from './components/chart/chart'
 
 function App() {
   return (

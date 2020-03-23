@@ -1,5 +1,6 @@
 import React from 'react';
-// import './chart.scss';
+import {Line} from 'react-chartjs-2'
+import './chart.scss';
 
 class Chart extends React.Component{
   constructor(props){
@@ -22,7 +23,7 @@ class Chart extends React.Component{
     render () {
       return (
         <div className="chartContainer">
-
+          <Line />
         </div>
       )
     }
