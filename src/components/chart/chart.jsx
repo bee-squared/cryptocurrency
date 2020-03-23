@@ -18,33 +18,45 @@ class Chart extends React.Component{
     }
   }
 
-    render () {
-      return (
-        <div className="chartContainer">
-          <Line
-            data={this.state.chartData}
-            options={{
-              title: {
-                display: true,
-                text:'Cryptocurrency in USD',
-                position: 'top',
-                align: 'left'
-              },
-              legend: {
-                display: true,
-                position: 'bottom',
-                labels: {
-                  fontColor: 'black'
-                }
-              },
-              layout: {
-                // margin: 'auto',
+  static defaultProps = {
+    displayTitle: true,
+    displayLegend: true,
+    legendPosition: 'bottom',
+  }
+
+  render () {
+    let {
+      displayTitle,
+      displayLegend,
+      legendPosition
+    } = this.state;
+    return (
+      <div className="chart">
+        <Line
+          data={this.state.chartData}
+          options={{
+            title: {
+              display: displayTitle,
+              text:'Cryptocurrency in USD',
+              position: 'top',
+              align: 'left'
+            },
+            legend: {
+              display: displayLegend,
+              position: legendPosition,
+              labels: {
+                fontColor: 'black',
+                fontSize: 25,
               }
-            }}
-          />
-        </div>
-      )
-    }
+            },
+            layout: {
+              // margin: 'auto',
+            }
+          }}
+        />
+      </div>
+    )
+  }
   }
 
   export default Chart;
