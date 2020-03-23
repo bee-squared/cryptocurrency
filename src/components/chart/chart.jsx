@@ -11,7 +11,8 @@ class Chart extends React.Component{
         datasets: [{
           label: 'Population',
             data: [10, 20, 15, 30, 20, 15, 28, 44],
-            backgroundColor: 'rgb(252, 76, 2)'
+            backgroundColor: 'rgb(252, 76, 2)',
+            borderColor: 'rgb(255, 255, 255)',
         }]
       }
     }
@@ -22,7 +23,24 @@ class Chart extends React.Component{
         <div className="chartContainer">
           <Line
             data={this.state.chartData}
-            options={{maintainAspectRatio: false}}
+            options={{
+              title: {
+                display: true,
+                text:'Cryptocurrency in USD',
+                position: 'top',
+                align: 'left'
+              },
+              legend: {
+                display: true,
+                position: 'bottom',
+                labels: {
+                  fontColor: 'black'
+                }
+              },
+              layout: {
+                // margin: 'auto',
+              }
+            }}
           />
         </div>
       )
