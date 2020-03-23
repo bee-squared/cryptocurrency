@@ -7,14 +7,11 @@ class Chart extends React.Component{
     super(props)
     this.state={
       chartData: {
-        labels: this.props.date,
+        labels: ['Boston', 'Denver', 'Seattle', 'Miami'],
         datasets: [{
-          data: {
-            labels: ['Item 1', 'Item 2', 'Item 3'],
-            datasets: [{
-                data: [10, 20, 30]
-            }]
-          }
+          label: 'Population',
+            data: [10, 20, 15, 30, 20, 15, 28, 44],
+            backgroundColor: 'rgb(252, 76, 2)'
         }]
       }
     }
@@ -23,7 +20,10 @@ class Chart extends React.Component{
     render () {
       return (
         <div className="chartContainer">
-          <Line />
+          <Line
+            data={this.state.chartData}
+            options={{maintainAspectRatio: false}}
+          />
         </div>
       )
     }
