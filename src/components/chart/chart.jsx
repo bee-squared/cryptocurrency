@@ -5,24 +5,32 @@ import './chart.scss';
 class Chart extends React.Component{
   constructor(props){
     super(props)
-    this.state={
+    console.log("constructor: ", props)
+    this.state = {
       chartData: {
-        labels: ['Boston', 'Denver', 'Seattle', 'Miami'],
+        labels: [],
         datasets: [{
-          label: 'Population',
-            data: [10, 20, 15, 30, 20, 15, 28, 44],
-            backgroundColor: 'rgb(252, 76, 2)',
-            borderColor: 'rgb(255, 255, 255)',
+          label: 'USD $',
+          data: [],
+          backgroundColor: 'rgb(252, 76, 2)',
+          borderColor: 'rgb(255, 255, 255)',
         }]
       }
     }
   }
 
-  static defaultProps = {
-    displayTitle: true,
-    displayLegend: true,
-    legendPosition: 'bottom',
+  componentDidUpdate() {
+    let { labels } = this.state.chartData;
+    let { data } = this.state.chartData.datasets[0];
+    let { dates } = this.props;
+    // this.setState({ lables: this.props.dates })
   }
+
+  // static defaultProps = {
+  //   displayTitle: true,
+  //   displayLegend: true,
+  //   legendPosition: 'bottom',
+  // }
 
   render () {
     let {
@@ -30,10 +38,25 @@ class Chart extends React.Component{
       displayLegend,
       legendPosition
     } = this.state;
+
+    const { dates, values } = this.props;
+
+    let chartData = {
+      labels: dates ? dates : [],
+      datasets: [{
+        label: 'USD $',
+        data: values ? values : [],
+        backgroundColor: 'rgb(252, 76, 2)',
+        borderColor: 'rgb(255, 255, 255)',
+      }]
+    }
+
+    console.log(chartData)
+
     return (
       <div className="chart">
         <Line
-          data={this.state.chartData}
+          data={chartData}
           options={{
             title: {
               display: displayTitle,
@@ -50,7 +73,7 @@ class Chart extends React.Component{
               }
             },
             layout: {
-              // margin: 'auto',
+              margin: 'auto',
             }
           }}
         />
