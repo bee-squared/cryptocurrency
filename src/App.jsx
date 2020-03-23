@@ -10,12 +10,14 @@ class App extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount () {
     this.getChartData();
   }
 
   getChartData = () => {
-
+    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json`)
+      .then((results) => results.json())
+      .then((chartData) => this.setState({ chartData }))
   }
 
   render() {
