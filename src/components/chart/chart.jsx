@@ -5,7 +5,6 @@ import './chart.scss';
 class Chart extends React.Component{
   constructor(props){
     super(props)
-    console.log("constructor: ", props)
     this.state = {
       chartData: {
         labels: [],
@@ -16,6 +15,19 @@ class Chart extends React.Component{
           borderColor: 'rgb(255, 255, 255)',
         }]
       }
+    }
+  }
+
+  componentDidUpdate (prevProps) {
+    const chartData = this.state.chartData;
+    if (this.props.dates !== prevProps.dates) {
+      chartData.labels = this.props.dates;
+      this.setState({ chartData: chartData });
+    }
+
+    if (this.props.values !== prevProps.values) {
+      chartData.datasets[0].data = this.props.values;
+      this.setState({ labels: this.props.dates });
     }
   }
 
@@ -32,19 +44,7 @@ class Chart extends React.Component{
       legendPosition
     } = this.state;
 
-    const { dates, values } = this.props;
-
-    let chartData = {
-      labels: dates ? dates : [],
-      datasets: [{
-        label: 'USD $',
-        data: values ? values : [],
-        backgroundColor: 'rgb(252, 76, 2)',
-        borderColor: 'rgb(255, 255, 255)',
-      }]
-    }
-
-    console.log(chartData)
+    let { chartData } = this.state;
 
     return (
       <div className="chart">
