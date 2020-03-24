@@ -15,6 +15,10 @@ class LineChart extends React.Component{
           borderColor: 'rgba(0, 0, 0, 1)',
           borderWidth: 0.5,
           pointHoverBackgroundColor: 'white',
+          pointBackgroundColor: 'rgb(192,192,192)',
+          pointBackgroundBorderColor: 'black',
+          pointRadius: 3,
+          pointStyle: 'circle',
         }],
       }
     }

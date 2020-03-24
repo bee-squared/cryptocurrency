@@ -34,8 +34,10 @@ class App extends React.Component {
     maintainAspectRatio: false,
     responsiveAnimationDuration: 200,
     animation: {
-      duration: 5000,
-      easing: 'linear',
+      duration: 2000,
+      easing: 'easeInQuad',
+      // animation: true,
+      // animationSteps: 80,
     },
     title: {
       display: this.props.displayTitle,
