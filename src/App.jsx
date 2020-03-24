@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './App.scss';
-import LineChart from './components/lineChart/lineChart'
+import LineChart from './components/lineChart/lineChart';
+import Moment from 'moment';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +19,10 @@ class App extends React.Component {
 
   getChartData = () => {
     const { dates, values } = this.state;
-    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=2020-01-01&end=2020-03-31`)
+    let currentDate = new Date();
+    currentDate = Moment(currentDate).format('YYYY-MM-DD');
+    // currentYear = Moment(currentDate).format('YYYY')
+    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=2020-01-01&end=${currentDate}`)
       .then((results) => results.json())
       .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi) }))
   }
