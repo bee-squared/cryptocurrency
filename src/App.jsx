@@ -18,7 +18,7 @@ class App extends React.Component {
 
   getChartData = () => {
     const { dates, values } = this.state;
-    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json`)
+    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=2020-01-01&end=2020-03-31`)
       .then((results) => results.json())
       .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi) }))
   }
@@ -77,7 +77,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="headerTitle">Cryptocurrency in USD (Bitcoin Index - BPI)</div>
-        <div className="timeframe">Last 30 Days</div>
+        <div className="timeframe">2020 YTD</div>
         <div className="chartContainer">
           <LineChart dates={dates} values={values} options={this.options}/>
         </div>
