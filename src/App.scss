@@ -13,6 +13,11 @@
   margin-bottom: 20px;
 }
 
+.timeframe {
+  font-size: .8rem;
+  margin-bottom: 10px;
+}
+
 .chartContainer {
   justify-content: center;
   text-align: center;
@@ -23,5 +28,10 @@
   .headerTitle {
     font-size: .85rem;
     font-weight: 500;
+  }
+
+  .timeframe {
+    font-size: .65rem;
+    margin-bottom: 10px;
   }
 }
