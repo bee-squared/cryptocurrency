@@ -8,6 +8,11 @@ class LineChart extends React.Component{
     this.state = {
       chartData: {
         labels: [],
+        hover: {
+          axis: 'y',
+          animationDuration: 400,
+          intersect: true,
+        },
         datasets: [{
           label: 'USD $',
           data: [],
@@ -17,7 +22,7 @@ class LineChart extends React.Component{
           pointHoverBackgroundColor: 'white',
           pointBackgroundColor: 'rgb(192,192,192)',
           pointBackgroundBorderColor: 'black',
-          pointRadius: 3,
+          pointRadius: 1,
           pointStyle: 'circle',
         }],
       }
