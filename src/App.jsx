@@ -20,9 +20,9 @@ class App extends React.Component {
   getChartData = () => {
     const { dates, values } = this.state;
     let currentDate = new Date();
+    let currentYear = Moment(currentDate).format('YYYY')
     currentDate = Moment(currentDate).format('YYYY-MM-DD');
-    // currentYear = Moment(currentDate).format('YYYY')
-    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=2020-01-01&end=${currentDate}`)
+    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${currentYear}-01-01&end=${currentDate}`)
       .then((results) => results.json())
       .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi) }))
   }
