@@ -5,6 +5,7 @@
 
 .lineGraph {
   display: flex;
+  height: 60vh;
 }
 
 .coinDesk {
@@ -18,5 +19,9 @@
   .coinDesk {
     font-size: .5rem;
     font-weight: 500;
+  }
+
+  .lineGraph {
+    height: 40vh;
   }
 }
