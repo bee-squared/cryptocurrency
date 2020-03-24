@@ -27,7 +27,7 @@ class App extends React.Component {
     const { dates, values } = this.state;
     return (
       <div className="App">
-        <div>Cryptocurrency App</div>
+        <div className="headerTitle">Cryptocurrency in USD (Bitcoin Index - BPI)</div>
         <div className="chartContainer">
           <Chart dates={dates} values={values} />
         </div>

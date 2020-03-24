@@ -1,9 +1,27 @@
 .App {
-  text-align: center;
-  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  width: 100%;
+  // max-width: 80vw;
+}
+
+.headerTitle {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .chartContainer {
-  justify-self: center;
+  justify-content: center;
+  text-align: center;
   width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  .headerTitle {
+    font-size: .85rem;
+    font-weight: 500;
+  }
 }

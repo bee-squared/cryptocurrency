@@ -11,9 +11,10 @@ class Chart extends React.Component{
         datasets: [{
           label: 'USD $',
           data: [],
-          backgroundColor: 'rgb(252, 76, 2)',
-          borderColor: 'rgb(255, 255, 255)',
-        }]
+          backgroundColor: 'rgba(252, 76, 2, 0.95)',
+          borderColor: 'rgba(0, 0, 0, 1)',
+          borderWidth: .5,
+        }],
       }
     }
   }
@@ -48,31 +49,46 @@ class Chart extends React.Component{
 
     return (
       <div className="chart">
-        <Line
-          data={chartData}
-          options={{
-            title: {
-              display: displayTitle,
-              text:'Cryptocurrency in USD',
-              position: 'top',
-              align: 'left'
-            },
-            legend: {
-              display: displayLegend,
-              position: legendPosition,
-              labels: {
-                fontColor: 'black',
-                fontSize: 25,
+        <div className="lineGraph">
+          <Line
+            data={chartData}
+            options={{
+              title: {
+                display: displayTitle,
+                text:'Cryptocurrency in USD',
+                position: 'top',
+                align: 'left'
+              },
+              legend: {
+                display: displayLegend,
+                position: legendPosition,
+                labels: {
+                  fontColor: 'black',
+                  fontSize: 25,
+                }
+              },
+              layout: {
+                margin: 'auto',
+              },
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    color: 'rgb(0,0,0)'
+                  }
+                }],
+                yAxes: [{
+                  gridLines: {
+                    color: 'rgb(0,0,0)'
+                  }
+                }]
               }
-            },
-            layout: {
-              margin: 'auto',
-            }
-          }}
-        />
-        <span>Powered by
-          <a href="https://www.coindesk.com/price/bitcoin"> CoinDesk</a>
-        </span>
+            }}
+          />
+        </div>
+        <div className="coinDesk">Powered by
+          <span> </span>
+          <a href="https://www.coindesk.com/price/bitcoin">CoinDesk</a>
+        </div>
       </div>
     )
   }
