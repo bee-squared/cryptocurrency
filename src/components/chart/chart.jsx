@@ -22,7 +22,7 @@ class Chart extends React.Component{
     const chartData = this.state.chartData;
     if (this.props.dates !== prevProps.dates) {
       chartData.labels = this.props.dates;
-      this.setState({ chartData: chartData });
+      this.setState({ chartData });
     }
 
     if (this.props.values !== prevProps.values) {
@@ -70,6 +70,9 @@ class Chart extends React.Component{
             }
           }}
         />
+        <span>Powered by
+          <a href="https://www.coindesk.com/price/bitcoin"> CoinDesk</a>
+        </span>
       </div>
     )
   }
