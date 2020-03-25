@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './App.scss';
-import LineChart from './components/lineChart/lineChart';
+import BarChart from './components/barChart/barChart';
 import Moment from 'moment';
 
 class App extends React.Component {
@@ -36,10 +36,10 @@ class App extends React.Component {
   options = {
     responsive: true,
     maintainAspectRatio: false,
-    responsiveAnimationDuration: 200,
+    responsiveAnimationDuration: 700,
     animation: {
-      duration: 2000,
-      easing: 'linear',
+      duration: 800,
+      easing: 'easeOutSine',
     },
     title: {
       display: this.props.displayTitle,
@@ -62,7 +62,8 @@ class App extends React.Component {
     scales: {
       xAxes: [{
         gridLines: {
-          color: 'rgb(0,0,0)'
+          color: 'rgb(0,0,0)',
+          display: false,
         }
       }],
       yAxes: [{
@@ -70,7 +71,7 @@ class App extends React.Component {
           beginAtZero: false,
         },
         gridLines: {
-          color: 'rgb(0,0,0)'
+          color: 'rgb(0,0,0)',
         }
       }]
     },
@@ -83,7 +84,7 @@ class App extends React.Component {
         <div className="headerTitle">Cryptocurrency in USD (Bitcoin Index - BPI)</div>
         <div className="timeframe">2020 YTD</div>
         <div className="chartContainer">
-          <LineChart dates={dates} values={values} options={this.options}/>
+          <BarChart dates={dates} values={values} options={this.options}/>
         </div>
       </div>
     );

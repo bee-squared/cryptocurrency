@@ -1,8 +1,8 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
-import './lineChart.scss';
+import { Bar } from 'react-chartjs-2';
+import './barChart.scss';
 
-class LineChart extends React.Component{
+class BarChart extends React.Component{
   constructor(props){
     super(props)
     this.state = {
@@ -50,7 +50,7 @@ class LineChart extends React.Component{
     return (
       <div className="chart">
         <div className="lineGraph">
-          <Line data={chartData} options={options} />
+          <Bar data={chartData} options={options} />
         </div>
         <div className="coinDesk">Powered by
           <span> </span>
@@ -64,4 +64,4 @@ class LineChart extends React.Component{
   }
   }
 
-  export default LineChart;
+  export default BarChart;
