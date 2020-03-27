@@ -20,8 +20,8 @@ https://github.com/bee-squared/cryptocurrency.git
 3. Navigate inside the root directory of the project './cryptocurrency/'
 
 4. Create a .env file and set up the following variables:
-- REACT_APP_SERVER = localhost:[port of your choice]
-- PORT=[port of your choice --> same port # as defined in the above REACT_APP_SERVER above]
+   - REACT_APP_SERVER = localhost:[port of your choice]
+   - PORT=[port of your choice --> same port # as defined in the above REACT_APP_SERVER above]
 
 5. Create a .gitignore file and include files you do not want to push to your public repo, such as:
 - .env
