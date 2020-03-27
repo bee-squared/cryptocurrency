@@ -24,9 +24,9 @@ https://github.com/bee-squared/cryptocurrency.git
    - PORT=[port of your choice --> same port # as defined in the above REACT_APP_SERVER above]
 
 5. Create a .gitignore file and include files you do not want to push to your public repo, such as:
-  - .env
-  - /node_modules
-  - /build
+   - .env
+   - /node_modules
+   - /build
 
 6. Run the following commands:
 ```
