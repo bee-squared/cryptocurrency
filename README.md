@@ -17,7 +17,7 @@ Cryptocurrency is a single-page app for viewing the historical price data for cr
 https://github.com/bee-squared/cryptocurrency.git
 ```
 
-3. Navigate inside the root directory of the project './navigator/'
+3. Navigate inside the root directory of the project './cryptocurrency/'
 
 4. Create a .env file and set up the following variables:
 - REACT_APP_SERVER = localhost:[port of your choice]
@@ -43,3 +43,7 @@ $ npm start
 - Docker - Not required to start app
 - Dotenv
 
+## Authors
+
+Brian Bouchard
+- [Github Profile](https://github.com/bee-squared)
