@@ -1,0 +1,27 @@
+.chart {
+  width: 100%;
+  margin: auto;
+}
+
+.lineGraph {
+  display: flex;
+  height: 60vh;
+}
+
+.coinDesk {
+  margin-top: 10px;
+  font-size: 0.7rem;
+  text-align: right;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .coinDesk {
+    font-size: .5rem;
+    font-weight: 500;
+  }
+
+  .lineGraph {
+    height: 40vh;
+  }
+}
