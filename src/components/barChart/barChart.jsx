@@ -57,7 +57,6 @@ class BarChart extends React.Component{
           <a href="https://www.coindesk.com/price/bitcoin">CoinDesk</a>
         </div>
         <div>
-          <canvas />
         </div>
       </div>
     )

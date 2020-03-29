@@ -2,6 +2,7 @@
 import React from 'react';
 import './App.scss';
 import BarChart from './components/barChart/barChart';
+import Utility from './components/utility/utility';
 import Moment from 'moment';
 
 class App extends React.Component {
@@ -83,6 +84,7 @@ class App extends React.Component {
       <div className="App">
         <div className="headerTitle">Cryptocurrency in USD (Bitcoin Index - BPI)</div>
         <div className="timeframe">2020 YTD</div>
+        <div><Utility/></div>
         <div className="chartContainer">
           <BarChart dates={dates} values={values} options={this.options}/>
         </div>
