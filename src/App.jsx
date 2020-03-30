@@ -83,7 +83,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="headerTitle">Cryptocurrency in USD (Bitcoin Index - BPI)</div>
-        <div className="timeframe">2020 YTD</div>
+        <div className="timeframe-title">Current Time Series: </div>
         <div><Utility/></div>
         <div className="chartContainer">
           <BarChart dates={dates} values={values} options={this.options}/>
