@@ -1,16 +1,15 @@
-.input-container {
-  display: flex;
-  width: 100%;
+#chart-type-input {
+  display: inline-flex;
+  width: 25%;
 }
 
-#chart-type-input {
-  display: inline-block;
+.input-group-prepend {
   width: 25%;
 }
 
 #date-input {
   display: inline-flex;
-  width: 75%;
+  width: 65%;
 }
 
 #start-date-input {
