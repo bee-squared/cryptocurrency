@@ -1,13 +1,9 @@
-.inputContainer {
-  display: flex;
+.input-container {
+  margin-bottom: 25px;
 }
 
 #chart-type-input {
   display: inline-flex;
-}
-
-.input-group {
-  display: inline-block;
 }
 
 #inputGroup-sizing-sm {
@@ -20,4 +16,18 @@
   font-size: 0.7rem;
   min-width: 100px;
   max-width: 100px;
+}
+
+@media only screen and (max-width: 500px) {
+  #inputGroup-sizing-sm {
+    min-width: 110px;
+    max-width: 110px;
+    font-size: 0.6rem;
+  }
+
+  #inputGroupSelect01 {
+    font-size: 0.6rem;
+    min-width: 100px;
+    max-width: 100px;
+  }
 }
