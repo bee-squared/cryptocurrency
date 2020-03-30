@@ -1,10 +1,19 @@
-#chart-type-input {
-  display: inline-flex;
-  width: 25%;
+.inputContainer {
+  display: flex;
 }
 
-.input-group-prepend {
-  width: 25%;
+#chart-type-input {
+  display: inline-flex;
+}
+
+.input-group {
+  display: inline-block;
+}
+
+#inputGroup-sizing-sm {
+  min-width: 135px;
+  max-width: 135px;
+  font-size: 0.7rem;
 }
 
 #date-input {
@@ -20,4 +29,10 @@
 #end-date-input {
   display: inline-block;
   width: 50%
+}
+
+#inputGroupSelect01 {
+  font-size: 0.7rem;
+  min-width: 100px;
+  max-width: 100px;
 }
