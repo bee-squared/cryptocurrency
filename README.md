@@ -14,9 +14,9 @@ Cryptocurrency is a single-page app for viewing the historical price data for cr
 
 2. Clone the following repository:
 
-```
+`
 https://github.com/bee-squared/cryptocurrency.git
-```
+`
 
 3. Navigate inside the root directory of the project './cryptocurrency/'
 
@@ -33,11 +33,11 @@ https://github.com/bee-squared/cryptocurrency.git
 
 6. Run the following commands:
 
-```
+`
 $ npm install
 $ npm run server-dev
 $ npm start
-```
+`
 
 ## Built With
 
