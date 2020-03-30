@@ -1,11 +1,24 @@
-.chart-type-container {
-  width: 50%;
+.input-container {
+  display: flex;
+  width: 100%;
 }
 
-.input-group-prepend {
+#chart-type-input {
+  display: inline-block;
   width: 25%;
 }
 
-.date-container {
-  width: 50%;
+#date-input {
+  display: inline-flex;
+  width: 75%;
+}
+
+#start-date-input {
+  display: inline-block;
+  width: 50%
+}
+
+#end-date-input {
+  display: inline-block;
+  width: 50%
 }
