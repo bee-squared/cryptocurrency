@@ -12,7 +12,7 @@ function Utility(props) {
           </div>
           <select class="form-control" id="inputGroupSelect01">
             <option selected>Choose...</option>
-            <option value="Bar">Bar</option>
+            <option value="Bar" selected="Bar">Bar</option>
           </select>
         </div>
         <div class="input-group input-group-sm" id="chart-type-input">
