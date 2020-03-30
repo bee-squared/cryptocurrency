@@ -1,15 +1,28 @@
 import React from 'react';
 import './utility.scss';
+import 'bootstrap/dist/css/bootstrap.css'
 
 function Utility(props) {
   return (
-    <form id="utilityForm">
-      <label for="chartType">Choose a chart type: </label>
-      <select id="chartType">
-        <option value="bar">Bar</option>
-      </select>
-      <span className="dateField">  Start Date: </span><input type="date" id="startDate" className="dateInput" name="startDate" min="2000-01-01"></input>
-      <span className="dateField">  End Date: </span><input type="date" id="endDate" className="dateInput" name="endDate" max="2030-01-01"></input>
+    <form>
+      <div className="input-group">
+        <div class="chart-type-container">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Chart Type</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="Bar">Bar</option>
+          </select>
+        </div>
+        <div class="date-container">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Select Dates</span>
+          </div>
+          <input type="date" aria-label="Start Date" class="form-control id=" />
+          <input type="date" aria-label="End Date" class="form-control" />
+        </div>
+      </div>
     </form>
   )
 }
