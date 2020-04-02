@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state = {
       dates: [],
       values: [],
-      startDate: '2020-01-01',
+      startDate: null,
+      endDate: null,
     }
   }
 
@@ -20,14 +21,19 @@ class App extends React.Component {
   }
 
   updateDates(startDate, endDate) {
+    this.setState({ startDate })
+  }
 
+  getCurrentDate() {
+    let currentDate = new Date();
+    currentDate = Moment(currentDate).format('YYYY-MM-DD');
+    return currentDate;
   }
 
   getChartData = () => {
     const { dates, values } = this.state;
-    let currentDate = new Date();
-    let currentYear = Moment(currentDate).format('YYYY')
-    currentDate = Moment(currentDate).format('YYYY-MM-DD');
+    let currentDate = this.getCurrentDate();
+    let currentYear = Moment(currentDate).format('YYYY');
     fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${currentYear}-01-01&end=${currentDate}`)
       .then((results) => results.json())
       .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi) }))
