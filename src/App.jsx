@@ -16,15 +16,16 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount = () => {
     this.getChartData();
   }
 
-  updateDates(startDate, endDate) {
-    this.setState({ startDate })
+  handleDateChange = (e) => {
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value}, () => {this.getChartData()})
   }
 
-  getCurrentDate() {
+  getCurrentDate = () => {
     let currentDate = new Date();
     currentDate = Moment(currentDate).format('YYYY-MM-DD');
     return currentDate;
@@ -106,7 +107,7 @@ class App extends React.Component {
           <span className="timeframe-title">Current Time Series: </span>
           <span className="timeframe-value">2020 YTD</span>
         </div>
-        <div><Utility/></div>
+        <div><Utility handleDateChange={this.handleDateChange}/></div>
         <div className="chartContainer">
           <BarChart dates={dates} values={values} options={this.options}/>
         </div>
