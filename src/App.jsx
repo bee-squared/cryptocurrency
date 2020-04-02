@@ -31,12 +31,22 @@ class App extends React.Component {
   }
 
   getChartData = () => {
-    const { dates, values } = this.state;
-    let currentDate = this.getCurrentDate();
-    let currentYear = Moment(currentDate).format('YYYY');
-    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${currentYear}-01-01&end=${currentDate}`)
+    let { dates, values, startDate, endDate } = this.state;
+
+    if (startDate === null) {
+      startDate = Moment(this.getCurrentDate()).format('YYYY') + '-01-01';
+    }
+
+    if (endDate === null) {
+      endDate = this.getCurrentDate();
+    }
+
+    if (startDate !== null && endDate !== null) {
+      fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${startDate}&end=${endDate}`)
       .then((results) => results.json())
       .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi) }))
+    }
+
   }
 
   static defaultProps = {
