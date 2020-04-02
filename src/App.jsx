@@ -11,11 +11,16 @@ class App extends React.Component {
     this.state = {
       dates: [],
       values: [],
+      startDate: '2020-01-01',
     }
   }
 
   componentDidMount () {
     this.getChartData();
+  }
+
+  updateDates(startDate, endDate) {
+
   }
 
   getChartData = () => {
