@@ -19,8 +19,8 @@ function Utility(props) {
           <div class="input-group-prepend">
             <span class="input-group-text col-form-label-sm" id="inputGroup-sizing-sm">Start and End Dates</span>
           </div>
-          <input type="date" class="form-control" id="inputGroup-sizing-sm"/>
-          <input type="date" class="form-control" id="inputGroup-sizing-sm"/>
+          <input type="date" class="form-control" id="inputGroup-sizing-sm" name="start-date" />
+          <input type="date" class="form-control" id="inputGroup-sizing-sm" name="end-date" />
         </div>
       </div>
     </form>
