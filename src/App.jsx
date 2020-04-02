@@ -41,11 +41,9 @@ class App extends React.Component {
       endDate = this.getCurrentDate();
     }
 
-    if (startDate !== null && endDate !== null) {
-      fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${startDate}&end=${endDate}`)
-      .then((results) => results.json())
-      .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi) }))
-    }
+    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${startDate}&end=${endDate}`)
+    .then((results) => results.json())
+    .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi) }))
 
   }
 

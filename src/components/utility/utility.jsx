@@ -6,21 +6,21 @@ function Utility(props) {
   return (
     <form>
       <div className="input-container">
-        <div class="input-group input-group-sm" id="chart-type-input-01">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01" id="inputGroup-sizing-sm">Chart Type</label>
+        <div className="input-group input-group-sm" id="chart-type-input-01">
+          <div className="input-group-prepend">
+            <label className="input-group-text" htmlFor="inputGroupSelect01" id="inputGroup-sizing-sm">Chart Type</label>
           </div>
-          <select class="form-control " id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            <option value="Bar" selected="Bar">Bar</option>
+          <select className="form-control " id="inputGroupSelect01" defaultValue="Bar">
+            <option value="choose">Choose...</option>
+            <option value="Bar">Bar</option>
           </select>
         </div>
-        <div class="input-group input-group-sm" id="chart-type-input">
-          <div class="input-group-prepend">
-            <span class="input-group-text col-form-label-sm" id="inputGroup-sizing-sm">Start and End Dates</span>
+        <div className="input-group input-group-sm" id="chart-type-input">
+          <div className="input-group-prepend">
+            <span className="input-group-text col-form-label-sm" id="inputGroup-sizing-sm">Start and End Dates</span>
           </div>
-          <input type="date" class="form-control" id="inputGroup-sizing-sm" name="start-date" />
-          <input type="date" class="form-control" id="inputGroup-sizing-sm" name="end-date" />
+          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="start-date" />
+          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="end-date" />
         </div>
       </div>
     </form>
