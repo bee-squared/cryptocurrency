@@ -31,9 +31,15 @@ class BarChart extends React.Component{
 
   componentDidMount() {
     const chartData = this.state.chartData;
+    const { dates, values } = this.props;
 
-    chartData.datasets[0].data = this.props.values;
-    this.setState({ labels: this.props.dates });
+    if (dates !== undefined && values !== undefined) {
+      chartData.labels = dates;
+      chartData.datasets[0].data = values;
+
+      console.log(chartData.labels)
+      this.setState({ chartData });
+    }
   }
 
   componentDidUpdate(prevProps) {

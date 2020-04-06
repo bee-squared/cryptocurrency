@@ -30,17 +30,20 @@ class LineChart extends React.Component{
   }
 
   componentDidMount() {
-    const { chartData } = this.state.chartData;
+    const chartData = this.state.chartData;
+    const { dates, values } = this.props;
 
-    // chartData.labels = this.props.dates;
-    // chartData.datasets[0].data = this.props.values;
+    if (dates !== undefined && values !== undefined) {
+      chartData.labels = dates;
+      chartData.datasets[0].data = values;
 
-    console.log(chartData)
-    // this.setState({ chartData });
+      console.log(chartData.labels)
+      this.setState({ chartData });
+    }
   }
 
   componentDidUpdate (prevProps) {
-    const { chartData } = this.state.chartData;
+    const chartData = this.state.chartData;
     if (this.props.dates !== prevProps.dates) {
       chartData.labels = this.props.dates;
       this.setState({ chartData });
