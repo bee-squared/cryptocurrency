@@ -104,7 +104,7 @@ class App extends React.Component {
         <div className="headerTitle">Cryptocurrency in USD (Bitcoin Index - BPI)</div>
         <div className="timeframe">
           <span className="timeframe-title">Current Time Series: </span>
-          <span className="timeframe-value">{startDate} - {endDate}</span>
+          <span className="timeframe-value">{Moment(startDate).format('MMMM Do YYYY')} - {Moment(endDate).format('MMMM Do YYYY')}</span>
         </div>
         <div><Utility startDate={startDate} endDate={endDate} handleDateChange={this.handleDateChange} chartType={chartType} handleChartType={this.handleChartType}/></div>
         <div className="chartContainer">
