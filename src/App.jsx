@@ -19,6 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
+
     this.getChartData();
   }
 
@@ -46,7 +47,7 @@ class App extends React.Component {
 
     fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${startDate}&end=${endDate}`)
     .then((results) => results.json())
-    .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi) }))
+    .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi), startDate, endDate}))
   }
 
   handleChartType = (e) => {
@@ -106,7 +107,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { dates, values, chartType } = this.state;
+    const { dates, values, startDate, endDate, chartType } = this.state;
     return (
       <div className="App">
         <div className="headerTitle">Cryptocurrency in USD (Bitcoin Index - BPI)</div>
@@ -114,7 +115,7 @@ class App extends React.Component {
           <span className="timeframe-title">Current Time Series: </span>
           <span className="timeframe-value">2020 YTD</span>
         </div>
-        <div><Utility handleDateChange={this.handleDateChange} chartType={chartType} handleChartType={this.handleChartType}/></div>
+        <div><Utility startDate={startDate} endDate={endDate} handleDateChange={this.handleDateChange} chartType={chartType} handleChartType={this.handleChartType}/></div>
         <div className="chartContainer">
           {chartType === 'Bar' ? <BarChart dates={dates} values={values} options={this.options}/> : null}
           {chartType === 'Line' ? <LineChart dates={dates} values={values} options={this.options}/> : null}
