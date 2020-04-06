@@ -20,8 +20,8 @@ function Utility(props) {
           <div className="input-group-prepend">
             <span className="input-group-text col-form-label-sm" id="inputGroup-sizing-sm">Start and End Dates</span>
           </div>
-          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="startDate" onChange={props.handleDateChange} />
-          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="endDate" onChange={props.handleDateChange} />
+          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="startDate" onChange={props.handleDateChange} value={props.startDate}/>
+          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="endDate" onChange={props.handleDateChange} value={props.endDate}/>
         </div>
       </div>
     </form>
