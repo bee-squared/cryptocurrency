@@ -13,6 +13,7 @@ class App extends React.Component {
       values: [],
       startDate: null,
       endDate: null,
+      chartType: 'bar',
     }
   }
 
