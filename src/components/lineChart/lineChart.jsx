@@ -29,6 +29,13 @@ class LineChart extends React.Component{
     }
   }
 
+  componentDidMount() {
+    const chartData = this.state.chartData;
+
+    chartData.datasets[0].data = this.props.values;
+    this.setState({ labels: this.props.dates });
+  }
+
   componentDidUpdate (prevProps) {
     const chartData = this.state.chartData;
     if (this.props.dates !== prevProps.dates) {
@@ -43,7 +50,6 @@ class LineChart extends React.Component{
   }
 
   render () {
-
     let { chartData } = this.state;
     let { options } = this.props;
 

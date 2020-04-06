@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './utility.scss';
 import 'bootstrap/dist/css/bootstrap.css'
 
 function Utility(props) {
+
   return (
     <form>
       <div className="input-container">
@@ -10,7 +11,7 @@ function Utility(props) {
           <div className="input-group-prepend">
             <label className="input-group-text" htmlFor="inputGroupSelect01" id="inputGroup-sizing-sm">Chart Type</label>
           </div>
-          <select className="form-control " id="inputGroupSelect01" onChange={props.handleChartType} defaultValue={props.chartType}>
+          <select className="form-control " id="inputGroupSelect01" onChange={props.handleChartType} value={props.chartType}>
             <option value="choose">Choose...</option>
             <option value="Bar">Bar</option>
             <option value="Line">Line</option>
@@ -20,8 +21,8 @@ function Utility(props) {
           <div className="input-group-prepend">
             <span className="input-group-text col-form-label-sm" id="inputGroup-sizing-sm">Start and End Dates</span>
           </div>
-          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="startDate" onChange={props.handleDateChange} value={props.startDate}/>
-          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="endDate" onChange={props.handleDateChange} value={props.endDate}/>
+          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="startDate" onChange={props.handleDateChange} />
+          <input type="date" className="form-control" id="inputGroup-sizing-sm" name="endDate" onChange={props.handleDateChange} />
         </div>
       </div>
     </form>

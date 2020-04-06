@@ -19,8 +19,19 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
+    let { startDate, endDate } = this.state;
 
-    this.getChartData();
+    if (startDate === null) {
+      startDate = Moment(this.getCurrentDate()).format('YYYY') + '-01-01';
+    }
+
+    if (endDate === null) {
+      endDate = this.getCurrentDate();
+    }
+
+    this.setState({ startDate, endDate }, () => {
+      this.getChartData();
+    })
   }
 
   handleDateChange = (e) => {
@@ -36,22 +47,14 @@ class App extends React.Component {
 
   getChartData = () => {
     let { dates, values, startDate, endDate } = this.state;
-
-    if (startDate === null) {
-      startDate = Moment(this.getCurrentDate()).format('YYYY') + '-01-01';
-    }
-
-    if (endDate === null) {
-      endDate = this.getCurrentDate();
-    }
-
     fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${startDate}&end=${endDate}`)
     .then((results) => results.json())
-    .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi), startDate, endDate}))
+    .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi)}))
   }
 
   handleChartType = (e) => {
     const chartType = this.state;
+    console.log(e.target.value)
     e.preventDefault();
     this.setState({ chartType: e.target.value })
   }
@@ -113,7 +116,7 @@ class App extends React.Component {
         <div className="headerTitle">Cryptocurrency in USD (Bitcoin Index - BPI)</div>
         <div className="timeframe">
           <span className="timeframe-title">Current Time Series: </span>
-          <span className="timeframe-value">2020 YTD</span>
+          <span className="timeframe-value">{startDate} - {endDate}</span>
         </div>
         <div><Utility startDate={startDate} endDate={endDate} handleDateChange={this.handleDateChange} chartType={chartType} handleChartType={this.handleChartType}/></div>
         <div className="chartContainer">
