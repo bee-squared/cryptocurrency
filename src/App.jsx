@@ -12,26 +12,14 @@ class App extends React.Component {
     this.state = {
       dates: [],
       values: [],
-      startDate: null,
-      endDate: null,
+      startDate: Moment(this.getCurrentDate()).format('YYYY') + '-01-01',
+      endDate: this.getCurrentDate(),
       chartType: 'Bar',
     }
   }
 
   componentDidMount = () => {
-    let { startDate, endDate } = this.state;
-
-    if (startDate === null) {
-      startDate = Moment(this.getCurrentDate()).format('YYYY') + '-01-01';
-    }
-
-    if (endDate === null) {
-      endDate = this.getCurrentDate();
-    }
-
-    this.setState({ startDate, endDate }, () => {
-      this.getChartData();
-    })
+    this.getChartData();
   }
 
   handleDateChange = (e) => {
