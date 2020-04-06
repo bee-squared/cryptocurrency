@@ -2,6 +2,7 @@
 import React from 'react';
 import './App.scss';
 import BarChart from './components/barChart/barChart';
+import LineChart from './components/lineChart/lineChart';
 import Utility from './components/utility/utility';
 import Moment from 'moment';
 
@@ -13,7 +14,7 @@ class App extends React.Component {
       values: [],
       startDate: null,
       endDate: null,
-      chartType: 'bar',
+      chartType: 'Bar',
     }
   }
 
@@ -48,10 +49,10 @@ class App extends React.Component {
     .then((chartData) => this.setState({ dates: Object.keys(chartData.bpi), values: Object.values(chartData.bpi) }))
   }
 
-  setChartType = (e) => {
+  handleChartType = (e) => {
     const chartType = this.state;
     e.preventDefault();
-    this.setState({ chartType: e.target.name })
+    this.setState({ chartType: e.target.value })
   }
 
   static defaultProps = {
@@ -113,9 +114,10 @@ class App extends React.Component {
           <span className="timeframe-title">Current Time Series: </span>
           <span className="timeframe-value">2020 YTD</span>
         </div>
-        <div><Utility handleDateChange={this.handleDateChange} chartType={chartType}/></div>
+        <div><Utility handleDateChange={this.handleDateChange} chartType={chartType} handleChartType={this.handleChartType}/></div>
         <div className="chartContainer">
-          <BarChart dates={dates} values={values} options={this.options}/>
+          {chartType === 'Bar' ? <BarChart dates={dates} values={values} options={this.options}/> : null}
+          {chartType === 'Line' ? <LineChart dates={dates} values={values} options={this.options}/> : null}
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-import './barChart.scss';
+import './lineChart.scss';
 
 class LineChart extends React.Component{
   constructor(props){
@@ -63,4 +63,4 @@ class LineChart extends React.Component{
   }
   }
 
-export default BarChart;
+export default LineChart;

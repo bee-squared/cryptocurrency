@@ -10,7 +10,7 @@ function Utility(props) {
           <div className="input-group-prepend">
             <label className="input-group-text" htmlFor="inputGroupSelect01" id="inputGroup-sizing-sm">Chart Type</label>
           </div>
-          <select className="form-control " id="inputGroupSelect01" >
+          <select className="form-control " id="inputGroupSelect01" onChange={props.handleChartType} defaultValue={props.chartType}>
             <option value="choose">Choose...</option>
             <option value="Bar">Bar</option>
             <option value="Line">Line</option>
