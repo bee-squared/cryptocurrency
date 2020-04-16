@@ -8,7 +8,7 @@
 
 #inputGroup-sizing-sm {
   min-width: 130px;
-  max-width: 130px;
+  max-width: 1px;
   font-size: 0.7rem;
 }
 
@@ -19,11 +19,6 @@
 }
 
 @media only screen and (max-width: 500px) {
-  #inputGroup-sizing-sm {
-    min-width: 110px;
-    max-width: 110px;
-    font-size: 0.6rem;
-  }
 
   #inputGroupSelect01 {
     font-size: 0.6rem;
